@@ -3,15 +3,12 @@ D3trademe::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-<<<<<<< HEAD
+
    #root 'application#application'
-=======
   # root 'welcome#index'
   root 'home#index'
 
 get 'test' => 'home#index'
->>>>>>> 6e9a8ee94ccafc7936bfde7b5e26e88169cbdbf8
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
