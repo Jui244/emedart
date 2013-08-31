@@ -30,6 +30,7 @@ window.onload = function(){
 
 var map;
 var circles = [];
+var infoWindow;
 function initialize(){
 
 	var mapOptions = {
@@ -49,10 +50,15 @@ $(document).ready(function(){
 	$("form").submit(function( event ) {
 		var keywords = $("#keywords").val();
 		clearMarkers();
+
+		var cat = $("#categories_category_id").val();
+		var subcat = $("#subcat").val();
 		$.ajax({
 			url: "/search",
 			data: {
-				keywords: keywords
+				keywords: keywords,
+				cat: cat,
+				subcat: subcat
 			},
 			success: function( data ) {
 				
@@ -76,7 +82,6 @@ $(document).ready(function(){
 	});
 })
 
-	
 function clearMarkers(){
 	for(var i in circles){
 		circles[i].setMap(null);
@@ -85,7 +90,10 @@ function clearMarkers(){
 }
 
 
-	function populateMarkers(data){
+function populateMarkers(data){
+	if(!infoWindow)
+		infoWindow = new google.maps.InfoWindow({});
+
 	var sum = 0;
 	for(var i in data){
 		sum = sum + data[i].count
@@ -101,20 +109,24 @@ function clearMarkers(){
     		fillOpacity: 0.35,
     		map: map,
     		center: location,
+    		position: location,
+    		data: data[i],
     		radius: Math.log(data[i].count)/Math.log(sum)*100000
 		});
+		
+		google.maps.event.addListener(circle, 'click', 
+            function(event)
+            {
+                map.panTo(event.latLng);
+                var contentString = '<h1>'+ this.data.region +'</h1>' +
+				'<p>Number of Listings: </p><p style="font-size:20pt">' + this.data.count + '</p>';
+                infoWindow.setContent(contentString);
+                infoWindow.open(map, this);
+            }
+        );
+
 		circles.push(circle);
 
-		var contentString = '<h1>'+ data[i].region +'</h1>' +
-				'<p>Number of Listings: </p><p>' + data[i].count + '</p>'
-
-		var infoWindow = new google.maps.InfoWindow({
-			content: contentString
-		});
-
-		google.maps.event.addListener(circle, 'click', function(ev){
-			infoWindow.open(map, circle)
-		});
 	}
 }
 
