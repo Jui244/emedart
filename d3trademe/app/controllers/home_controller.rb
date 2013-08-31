@@ -4,5 +4,6 @@ class HomeController < ApplicationController
 	end
 	def search()
 		params[:keywords]
+		render json: @fakeData
 	end
 end 
