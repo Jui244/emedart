@@ -8,7 +8,9 @@ D3trademe::Application.routes.draw do
   # root 'welcome#index'
   root 'home#index'
 
-get 'test' => 'home#index'
+
+
+get 'search' => 'home#search'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -2,8 +2,21 @@ class HomeController < ApplicationController
 	def index
 
 	end
-	def search()
+	def search
 		params[:keywords]
-		render json: @fakeData
+
+		
+		fakeData = [SearchResult.new("Marlborough", 300)]
+		
+		render json: fakeData
 	end
 end 
+
+class SearchResult 
+	attr_accessor :region, :count
+
+	def initalize(region, count)
+		@region = region
+		@count = count
+	end
+end
