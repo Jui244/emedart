@@ -11,6 +11,7 @@ D3trademe::Application.routes.draw do
 
 
 get 'search' => 'home#search'
+get 'subcategories' => 'home#subcategories'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

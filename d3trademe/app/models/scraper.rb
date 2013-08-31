@@ -14,7 +14,9 @@ def self.generate(cat)
 	url = "http://api.trademe.co.nz/v1/Categories/#{cat}.json?depth=1"
 	result = JSON.parse(RestClient.get(url))
 
-	return result["Subcategories"]
+	result["Subcategories"].collect do |subcategory|
+		Subcategory.new(subcategory["Number"], subcategory["Name"])
+	end
 end
 
 

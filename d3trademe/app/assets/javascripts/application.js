@@ -63,13 +63,11 @@ $(document).ready(function(){
 		var category_id = $("#categories_category_id").val();
 		//alert(category_id);
 		$.ajax({
-			url: "/get-subcategories",
+			url: "/subcategories",
 			data: {
 				category_id: category_id
-			},
-			success: function( data ) {
-				alert(data);
 			}
+			
 		});
 	
 	});

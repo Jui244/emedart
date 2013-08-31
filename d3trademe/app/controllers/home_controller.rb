@@ -24,6 +24,12 @@ class HomeController < ApplicationController
 		
 		render json: fakeData
 	end
+
+	def subcategories
+		if params[:category_id]
+			@subcategories = Scraper.generate(params[:category_id])
+		end
+	end
 end 
 
 class SearchResult 
