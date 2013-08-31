@@ -26,3 +26,19 @@ function initialize(){
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+$(document).ready(function(){
+	$("form").submit(function( event ) {
+		var keywords = $("#keywords").val();
+		$.ajax({
+			url: "/search",
+			data: {
+				keywords: keywords
+			},
+			success: function( data ) {
+				alert(data);
+			}
+		});
+		return false;
+	});
+})
