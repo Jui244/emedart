@@ -815,3 +815,213 @@ ActionView::MissingTemplate (Missing template home/subcategories, application/su
 
 
   Rendered /Users/juideshpande/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-31 16:34:46 +1200
+Processing by HomeController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered home/index.html.erb within layouts/application (1066.7ms)
+Completed 200 OK in 1113ms (Views: 1076.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-31 16:34:47 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-31 16:34:47 +1200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-31 16:34:47 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-31 16:34:47 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-31 16:34:47 +1200
+
+
+Started GET "/subcategories?category_id=0350-" for 127.0.0.1 at 2013-08-31 16:34:51 +1200
+Processing by HomeController#subcategories as */*
+  Parameters: {"category_id"=>"0350-"}
+  Rendered subcategories/_subcategory.html.erb (0.8ms)
+  Rendered home/subcategories.js.erb (11.4ms)
+Completed 200 OK in 167ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=cat&cat=0350-&subcat=0350-5748-" for 127.0.0.1 at 2013-08-31 16:34:55 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"cat", "cat"=>"0350-", "subcat"=>"0350-5748-"}
+Completed 200 OK in 444ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=dog&cat=0350-&subcat=0350-5748-" for 127.0.0.1 at 2013-08-31 16:35:04 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"dog", "cat"=>"0350-", "subcat"=>"0350-5748-"}
+Completed 200 OK in 579ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=dog&cat=0350-&subcat=0350-5745-" for 127.0.0.1 at 2013-08-31 16:35:11 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"dog", "cat"=>"0350-", "subcat"=>"0350-5745-"}
+Completed 200 OK in 419ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/subcategories?category_id=0193-" for 127.0.0.1 at 2013-08-31 16:35:15 +1200
+Processing by HomeController#subcategories as */*
+  Parameters: {"category_id"=>"0193-"}
+  Rendered subcategories/_subcategory.html.erb (0.4ms)
+  Rendered home/subcategories.js.erb (4.8ms)
+Completed 200 OK in 52ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=dog&cat=0193-&subcat=0193-0461-" for 127.0.0.1 at 2013-08-31 16:35:17 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"dog", "cat"=>"0193-", "subcat"=>"0193-0461-"}
+Completed 200 OK in 765ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/subcategories?category_id=0153-" for 127.0.0.1 at 2013-08-31 16:35:31 +1200
+Processing by HomeController#subcategories as */*
+  Parameters: {"category_id"=>"0153-"}
+  Rendered subcategories/_subcategory.html.erb (0.3ms)
+  Rendered home/subcategories.js.erb (5.1ms)
+Completed 200 OK in 57ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=cat&cat=0153-&subcat=0153-0438-" for 127.0.0.1 at 2013-08-31 16:35:37 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"cat", "cat"=>"0153-", "subcat"=>"0153-0438-"}
+Completed 200 OK in 626ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=cat&cat=0153-&subcat=0153-6179-" for 127.0.0.1 at 2013-08-31 16:36:49 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"cat", "cat"=>"0153-", "subcat"=>"0153-6179-"}
+Completed 200 OK in 981ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=cat&cat=0153-&subcat=0153-0439-" for 127.0.0.1 at 2013-08-31 16:36:54 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"cat", "cat"=>"0153-", "subcat"=>"0153-0439-"}
+Completed 200 OK in 392ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=cat&cat=0153-&subcat=0153-6179-" for 127.0.0.1 at 2013-08-31 16:36:58 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"cat", "cat"=>"0153-", "subcat"=>"0153-6179-"}
+Completed 200 OK in 484ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=cat&cat=0153-&subcat=0153-6179-" for 127.0.0.1 at 2013-08-31 16:37:06 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"cat", "cat"=>"0153-", "subcat"=>"0153-6179-"}
+Completed 200 OK in 783ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=cat&cat=0153-&subcat=0153-0439-" for 127.0.0.1 at 2013-08-31 16:37:10 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"cat", "cat"=>"0153-", "subcat"=>"0153-0439-"}
+Completed 200 OK in 457ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=hey&cat=0153-&subcat=0153-2003-" for 127.0.0.1 at 2013-08-31 16:39:23 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"hey", "cat"=>"0153-", "subcat"=>"0153-2003-"}
+Completed 200 OK in 322ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/subcategories?category_id=0344-" for 127.0.0.1 at 2013-08-31 16:40:26 +1200
+Processing by HomeController#subcategories as */*
+  Parameters: {"category_id"=>"0344-"}
+  Rendered subcategories/_subcategory.html.erb (0.2ms)
+  Rendered home/subcategories.js.erb (5.1ms)
+Completed 200 OK in 398ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=samsung&cat=0344-&subcat=0344-0899-" for 127.0.0.1 at 2013-08-31 16:40:32 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"samsung", "cat"=>"0344-", "subcat"=>"0344-0899-"}
+Completed 200 OK in 1217ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=iphone&cat=0344-&subcat=0344-0899-" for 127.0.0.1 at 2013-08-31 16:40:43 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"iphone", "cat"=>"0344-", "subcat"=>"0344-0899-"}
+Completed 200 OK in 889ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-31 16:43:24 +1200
+Processing by HomeController#index as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered home/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 100ms (Views: 98.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-31 16:43:24 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-31 16:43:24 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-31 16:43:24 +1200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-31 16:43:25 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-31 16:43:25 +1200
+
+
+Started GET "/subcategories?category_id=0350-" for 127.0.0.1 at 2013-08-31 16:43:29 +1200
+Processing by HomeController#subcategories as */*
+  Parameters: {"category_id"=>"0350-"}
+  Rendered subcategories/_subcategory.html.erb (0.2ms)
+  Rendered home/subcategories.js.erb (4.8ms)
+Completed 200 OK in 78ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=animals&cat=0350-&subcat=0350-5748-" for 127.0.0.1 at 2013-08-31 16:43:38 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"animals", "cat"=>"0350-", "subcat"=>"0350-5748-"}
+Completed 200 OK in 1715ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/subcategories?category_id=5000-" for 127.0.0.1 at 2013-08-31 16:43:50 +1200
+Processing by HomeController#subcategories as */*
+  Parameters: {"category_id"=>"5000-"}
+  Rendered subcategories/_subcategory.html.erb (1.0ms)
+  Rendered home/subcategories.js.erb (5.6ms)
+Completed 200 OK in 76ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=animals&cat=5000-&subcat=5000-5001-" for 127.0.0.1 at 2013-08-31 16:43:52 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"animals", "cat"=>"5000-", "subcat"=>"5000-5001-"}
+Completed 200 OK in 329ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/subcategories?category_id=" for 127.0.0.1 at 2013-08-31 16:44:26 +1200
+Processing by HomeController#subcategories as */*
+  Parameters: {"category_id"=>""}
+Completed 500 Internal Server Error in 388ms
+
+RestClient::ResourceNotFound (404 Resource Not Found):
+  app/models/scraper.rb:13:in `generate'
+  app/controllers/home_controller.rb:37:in `subcategories'
+
+
+  Rendered /Users/scottallen/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (82.7ms)
+  Rendered /Users/scottallen/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/scottallen/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/scottallen/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (119.5ms)
+
+
+Started GET "/search?keywords=cats&cat=&subcat=5000-5001-" for 127.0.0.1 at 2013-08-31 16:44:31 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"cats", "cat"=>"", "subcat"=>"5000-5001-"}
+Completed 200 OK in 1628ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=dogs&cat=&subcat=5000-5001-" for 127.0.0.1 at 2013-08-31 16:44:38 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"dogs", "cat"=>"", "subcat"=>"5000-5001-"}
+Completed 200 OK in 321ms (Views: 1.1ms | ActiveRecord: 0.0ms)
