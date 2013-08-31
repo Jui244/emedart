@@ -94,4 +94,3 @@ regions ={
 	"Otago": new google.maps.LatLng(-44.902578, 169.714966),
 	"Southland": new google.maps.LatLng(-45.782848, 167.814331),
 };
-regions[]
