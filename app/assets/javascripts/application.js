@@ -93,7 +93,8 @@ function clearMarkers(){
 
 function populateMarkers(data){
 	if(!infoWindow)
-		infoWindow = new google.maps.InfoWindow({});
+		infoWindow = new google.maps.InfoWindow({
+		});
 
 	var sum = 0;
 	for(var i in data){
@@ -120,8 +121,14 @@ function populateMarkers(data){
             {
                 map.panTo(event.latLng);
                 var contentString = '<h1>'+ this.data.region +'</h1>' +
-				'<p>Number of Listings: </p><p style="font-size:20pt">' + this.data.count + '</p>';
-                infoWindow.setContent(contentString);
+				'<p>Number of Listings: </p>' +
+				'<p style="font-size:42pt; color: orange; margin: 0px; padding-bottom: 25px">' + this.data.count + '</p>';
+				var contentElement = document.createElement("div");
+				contentElement.innerHTML = contentString;
+				contentElement.style.width = "200px";
+				contentElement.style.textAlign = "center";
+				
+                infoWindow.setContent(contentElement);
                 infoWindow.open(map, this);
             }
         );
