@@ -6,7 +6,7 @@ class HomeController < ApplicationController
 		cat = params[:cat]
 		subCat =params[:subCat]
 		
-		if(!subCat.nil?)
+		if(!subCat.nil? && subCat != "Please choose")
 			choice = subCat
 		elsif(!cat.nil?)
 			choice = cat
