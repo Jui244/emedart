@@ -29,6 +29,7 @@ window.onload = function(){
 }
 
 var map;
+var circles = [];
 function initialize(){
 
 	var mapOptions = {
@@ -47,12 +48,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
 $(document).ready(function(){
 	$("form").submit(function( event ) {
 		var keywords = $("#keywords").val();
+		clearMarkers();
 		$.ajax({
 			url: "/search",
 			data: {
 				keywords: keywords
 			},
 			success: function( data ) {
+				
 				populateMarkers(data);
 			}
 		});
@@ -73,27 +76,47 @@ $(document).ready(function(){
 	});
 })
 
+	
+function clearMarkers(){
+	for(var i in circles){
+		circles[i].setMap(null);
+	}
+	circles = [];
+}
+
 
 	function populateMarkers(data){
-		var sum = 0;
-		for(var i in data){
-			sum = sum + data[i].count
-		}
-
-		for(var i in data) {
-			var location = regions[data[i].region]
-			var circle = new google.maps.Circle({
-				strokeColor: '#FF0000',
-     			strokeOpacity: 0.8,
-      			strokeWeight: 2,
-      			fillColor:'#FF0000',
-      			fillOpacity: 0.35,
-      			map: map,
-      			center: location,
-      			radius: Math.log(data[i].count)/Math.log(sum)*100000
-			});
-		}
+	var sum = 0;
+	for(var i in data){
+		sum = sum + data[i].count
 	}
+
+	for(var i in data) {
+		var location = regions[data[i].region]
+		var circle = new google.maps.Circle({
+			strokeColor: '#FF0000',
+    		strokeOpacity: 0.8,
+    		strokeWeight: 2,
+    		fillColor:'#FF0000',
+    		fillOpacity: 0.35,
+    		map: map,
+    		center: location,
+    		radius: Math.log(data[i].count)/Math.log(sum)*100000
+		});
+		circles.push(circle);
+
+		var contentString = '<h1>'+ data[i].region +'</h1>' +
+				'<p>Number of Listings: </p><p>' + data[i].count + '</p>'
+
+		var infoWindow = new google.maps.InfoWindow({
+			content: contentString
+		});
+
+		google.maps.event.addListener(circle, 'click', function(ev){
+			infoWindow.open(map, circle)
+		});
+	}
+}
 
 
 regions ={
