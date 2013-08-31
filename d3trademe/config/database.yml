@@ -5,8 +5,8 @@
 #   gem 'sqlite3'
 development:
   adapter: sqlite3
-  database: d3_dev
-  # pool: 5
+  database: db/development.sqlite3
+  pool: 5
   timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
@@ -15,11 +15,11 @@ development:
 test:
   adapter: sqlite3
   database: d3_test
-  # pool: 5
+  pool: 5
   timeout: 5000
 
 production:
   adapter: sqlite3
   database: d3_prod
-  # pool: 5
+  pool: 5
   timeout: 5000
