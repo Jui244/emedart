@@ -4,6 +4,7 @@ require 'open-uri'
 require 'rest-client'
 require 'json'
 require 'net/http'
+
 require 'sqlite3'
 
 
@@ -19,14 +20,12 @@ def self.generate(cat)
 	end
 end
 
-
 def self.initialise
 
 url = 'http://api.trademe.co.nz/v1/Categories/0.json'
 
 result = JSON.parse(RestClient.get(url))
 begin
-#db = SQLite3::Database.new "../../db/development.sqlite3"
 db = Category.connection
 
     db.execute"DROP TABLE IF EXISTS categories"
@@ -46,4 +45,4 @@ ensure
 end
 end
 end
-
+end

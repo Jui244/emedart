@@ -1,28 +1,42 @@
+require 'oauth'
+
 class HomeController < ApplicationController
 	def index
 
 	end
 	def search
-		params[:keywords]
-
+		keywords = params[:keywords]
+		cat = params[:cat]
+		subCat =params[:subCat]
 		
-		fakeData = [SearchResult.new("Marlborough", 300),
-			SearchResult.new("Wellington", 1000),
-			SearchResult.new("Auckland", 1700),
-			SearchResult.new("Waikato", 400),
-			SearchResult.new("Gisborne", 150),
-			SearchResult.new("Otago",678 ),
-			SearchResult.new("Taranaki", 70),
-			SearchResult.new("Wairarapa", 50),
-			SearchResult.new("Nelson Bays", 300),
-			SearchResult.new("Hawke's Bay", 60),
-			SearchResult.new("Wanganui", 30),
-			SearchResult.new("West Coast", 600),
-			SearchResult.new("Canterbury", 60),
+		if(!subCat.nil?)
+			choice = subCat
+		elsif(!cat.nil?)
+			choice = cat
+		else
+			choice = "0"
+		end
 
-		]
+		#fix keywords
+		url = "https://api.trademe.co.nz/v1/Search/General.json?category=#{choice}&search_string=#{keywords}&rows=500"
+		consumer = ::OAuth::Consumer.new("66B304AB0E8AC0B85C7C395F834649B6F3", "A99259F6D97F60F7BE0BCDDF7E84DEFE90", :site => "https://secure.trademe.co.nz")
+		token = ::OAuth::ConsumerToken.new(consumer, '2988879ACAA375E4D9734072AB0DB2D0B5', 'A45830807EC7D9C85AE80487B9E6BF8A7D')
+		request = token.request(:get, url)
+
+		regionsToCount = {}
+		JSON.parse(request.body)["List"].each do |result|
+			if regionsToCount[result["Region"]]
+				regionsToCount[result["Region"]] += 1 
+			else
+				regionsToCount[result["Region"]] = 1
+			end
+		end
+
+		results = regionsToCount.collect do |region, count|
+			SearchResult.new(region, count)
+		end
 		
-		render json: fakeData
+		render json: results
 	end
 
 	def subcategories
@@ -32,9 +46,9 @@ class HomeController < ApplicationController
 	end
 end 
 
+
 class SearchResult 
 	attr_accessor :region, :count
-
 	def initialize(region, count)
 		@region = region
 		@count = count
