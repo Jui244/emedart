@@ -39,6 +39,8 @@ function initialize(){
 	map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 }
 
+
+
 google.maps.event.addDomListener(window, 'load', initialize);
 
 
@@ -51,12 +53,35 @@ $(document).ready(function(){
 				keywords: keywords
 			},
 			success: function( data ) {
-				alert(data);
+				populateMarkers(data);
 			}
 		});
 		return false;
 	});
 })
+
+
+	function populateMarkers(data){
+		var sum = 0;
+		for(var i in data){
+			sum = sum + data[i].count
+		}
+
+		for(var i in data) {
+			var location = regions[data[i].region]
+			var circle = new google.maps.Circle({
+				strokeColor: '#FF0000',
+     			strokeOpacity: 0.8,
+      			strokeWeight: 2,
+      			fillColor:'#FF0000',
+      			fillOpacity: 0.35,
+      			map: map,
+      			center: location,
+      			radius: Math.log(data[i].count)/Math.log(sum)*100000
+			});
+		}
+	}
+
 
 regions ={
 	"Northland": new google.maps.LatLng(-35.556809, 173.874664),
@@ -69,7 +94,7 @@ regions ={
 	"Wanganui": new google.maps.LatLng(-39.931064, 175.048199),
 	"Manawatu": new google.maps.LatLng(-40.148439, 175.678024),
 	"Wairarapa": new google.maps.LatLng(-41.23238, 175.455551),
-	"wellington": new google.maps.LatLng(-41.266453, 174.778519),
+	"Wellington": new google.maps.LatLng(-41.266453, 174.778519),
 	"Nelson Bays": new google.maps.LatLng(-41.292254, 173.278656),
 	"Marlborough": new google.maps.LatLng(-41.539422, 173.934342),
 	"West Coast": new google.maps.LatLng(-42.431566, 171.6156),
@@ -77,6 +102,5 @@ regions ={
 	"Timaru": new google.maps.LatLng(-44.382766, 171.199493),
 	"Oamaru": new google.maps.LatLng(-44.382766, 171.199493),
 	"Otago": new google.maps.LatLng(-44.902578, 169.714966),
-	"Southland": new google.maps.LatLng(-45.782848, 167.814331),
+	"Southland": new google.maps.LatLng(-45.782848, 167.814331)
 };
-regions[]
