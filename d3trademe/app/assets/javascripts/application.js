@@ -58,6 +58,21 @@ $(document).ready(function(){
 		});
 		return false;
 	});
+
+	$("#categories_category_id").change(function( event ) {
+		var category_id = $("#categories_category_id").val();
+		//alert(category_id);
+		$.ajax({
+			url: "/get-subcategories",
+			data: {
+				category_id: category_id
+			},
+			success: function( data ) {
+				alert(data);
+			}
+		});
+	
+	});
 })
 
 
