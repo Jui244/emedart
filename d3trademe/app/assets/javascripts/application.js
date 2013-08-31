@@ -58,3 +58,25 @@ $(document).ready(function(){
 	});
 })
 
+regions ={
+	"Northland": new google.maps.LatLng(-35.556809, 173.874664),
+	"Auckland": new google.maps.LatLng(-36.856549, 174.764786),
+	"Waikato": new google.maps.LatLng(-38.043765, 175.467224),
+	"Bay of Plenty": new google.maps.LatLng(-38.117272, 176.598816),
+	"Gisborne": new google.maps.LatLng(-38.658035, 178.014879),
+	"Hawke's Bay": new google.maps.LatLng(-39.410733, 176.741638),
+	"Taranaki": new google.maps.LatLng(-39.355538,174.44046),
+	"Wanganui": new google.maps.LatLng(-39.931064, 175.048199),
+	"Manawatu": new google.maps.LatLng(-40.148439, 175.678024),
+	"Wairarapa": new google.maps.LatLng(-41.23238, 175.455551),
+	"wellington": new google.maps.LatLng(-41.266453, 174.778519),
+	"Nelson Bays": new google.maps.LatLng(-41.292254, 173.278656),
+	"Marlborough": new google.maps.LatLng(-41.539422, 173.934342),
+	"West Coast": new google.maps.LatLng(-42.431566, 171.6156),
+	"Canterbury": new google.maps.LatLng(-43.55651, 171.714477),
+	"Timaru": new google.maps.LatLng(-44.382766, 171.199493),
+	"Oamaru": new google.maps.LatLng(-44.382766, 171.199493),
+	"Otago": new google.maps.LatLng(-44.902578, 169.714966),
+	"Southland": new google.maps.LatLng(-45.782848, 167.814331),
+};
+regions[]
