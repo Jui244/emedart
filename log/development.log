@@ -815,3 +815,39 @@ ActionView::MissingTemplate (Missing template home/subcategories, application/su
 
 
   Rendered /Users/juideshpande/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-31 16:37:40 +1200
+Processing by HomeController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered home/index.html.erb within layouts/application (294.2ms)
+Completed 200 OK in 355ms (Views: 317.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-31 16:37:41 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-31 16:37:41 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-31 16:37:41 +1200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-31 16:37:41 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-31 16:37:41 +1200
+
+
+Started GET "/subcategories?category_id=0339-" for 127.0.0.1 at 2013-08-31 16:37:44 +1200
+Processing by HomeController#subcategories as */*
+  Parameters: {"category_id"=>"0339-"}
+  Rendered subcategories/_subcategory.html.erb (0.6ms)
+  Rendered home/subcategories.js.erb (10.4ms)
+Completed 200 OK in 309ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=batman&cat=0339-&subcat=0339-0488-" for 127.0.0.1 at 2013-08-31 16:37:51 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"batman", "cat"=>"0339-", "subcat"=>"0339-0488-"}
+Completed 200 OK in 641ms (Views: 1.3ms | ActiveRecord: 0.0ms)

@@ -69,6 +69,7 @@ $(document).ready(function(){
 	});
 
 	$("#categories_category_id").change(function( event ) {
+		$("#subcat").html('');
 		var category_id = $("#categories_category_id").val();
 		//alert(category_id);
 		$.ajax({
