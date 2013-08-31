@@ -58,7 +58,7 @@ $(document).ready(function(){
 			data: {
 				keywords: keywords,
 				cat: cat,
-				subcat: subcat
+				subCat: subcat
 			},
 			success: function( data ) {
 				
