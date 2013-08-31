@@ -14,7 +14,8 @@ class Scraper
 		result = JSON.parse(RestClient.get(url))
 
 		result["Subcategories"].collect do |subcategory|
-		Subcategory.new(subcategory["Number"], subcategory["Name"])
+			Subcategory.new(subcategory["Number"], subcategory["Name"])
+		end
 	end
 
 	def self.initialise
@@ -29,9 +30,8 @@ class Scraper
 			db.execute"CREATE TABLE IF NOT EXISTS categories(id INTEGER, name STRING, number STRING PRIMARY KEY, path STRING)"  
 
 			result["Subcategories"].each_with_index do |subcategory, index|
-			db.execute "INSERT INTO categories values (?, ?, ?, ?)", [index, subcategory["Name"], subcategory["Number"], subcategory["Path"]]
-		end
-
+				db.execute "INSERT INTO categories values (?, ?, ?, ?)", [index, subcategory["Name"], subcategory["Number"], subcategory["Path"]]
+			end
 		rescue SQLite3::Exception => e 
 	    
 	    	puts "Exception occured"
@@ -39,7 +39,8 @@ class Scraper
 	    
 		ensure
 	    	db.close if db
-		end
+	    end
 	end
 end
+
 
