@@ -23,7 +23,8 @@
 <!-- HTML for SEARCH BAR -->
   <div id="tfheader">
     <form align="right" >
-        <%= collection_select :categories, :category_id, Category.all, :id, :name %>
+
+        <%= collection_select :categories, :category_id, Category.all, :id, :name , prompt: "Categories"%>
           <!-- <select name="Categories" class="optionbox" value="">  
             <option value="" > Categories </option>
             <option value="" > Categories </option>
