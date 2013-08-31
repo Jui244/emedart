@@ -31,6 +31,7 @@ class HomeController < ApplicationController
 		end
 		render json: results
 	end
+	
 	def subcategories
 		if params[:category_id]
 			@subcategories = Scraper.generate(params[:category_id])

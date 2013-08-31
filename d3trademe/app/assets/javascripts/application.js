@@ -47,10 +47,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 $(document).ready(function(){
 	$("form").submit(function( event ) {
 		var keywords = $("#keywords").val();
+
+		var cat = $("#categories_category_id").val();
+		var subcat = $("#subcat").val();
 		$.ajax({
 			url: "/search",
 			data: {
-				keywords: keywords
+				keywords: keywords,
+				cat: cat,
+				subcat: subcat
 			},
 			success: function( data ) {
 				populateMarkers(data);
