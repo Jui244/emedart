@@ -7,26 +7,18 @@ require 'net/http'
 require 'sqlite3'
 
 
-def generate(cat)
-begin
-	db = SQLite3::Database.new "db/development.sqlite3"
+class Scraper
 
-	url = "http://api.trademe.co.nz/v1/Categories/#{cat}.json"
+def self.generate(cat)
+
+	url = "http://api.trademe.co.nz/v1/Categories/#{cat}.json?depth=1"
 	result = JSON.parse(RestClient.get(url))
-    db.execute"DROP TABLE IF EXISTS temp_categories"
-	db.execute"CREATE TABLE IF NOT EXISTS temp_categories(id INTEGER,  STRING, number STRING PRIMARY KEY, path STRING)" 
-	result["Subcategories"].each_with_index do |subcategory, index|
-		db.execute "INSERT INTO temp_categories values (?, ?, ?, ?)",[index, subcategory["Name"], subcategory["Number"], subcategory["Path"]]
-	end
-rescue SQLite3::Exception => e 
-    puts "Exception occured"
-    puts e  
-ensure
-    db.close if db
-end
+	return result[subcategories]
 end
 
-url = 'http://api.trademe.co.nz/v1/Categories/0.json'
+
+def init
+url = 'http://api.trademe.co.nz/v1/Categories/0.json?depth=1'
 
 result = JSON.parse(RestClient.get(url))
 
@@ -48,10 +40,10 @@ rescue SQLite3::Exception => e
 ensure
     db.close if db
 end
-
+end
 generate(1);
 
-
+end
 
 
 
