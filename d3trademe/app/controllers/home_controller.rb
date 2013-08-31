@@ -15,7 +15,7 @@ end
 class SearchResult 
 	attr_accessor :region, :count
 
-	def initalize(region, count)
+	def initialize(region, count)
 		@region = region
 		@count = count
 	end
