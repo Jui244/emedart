@@ -1199,3 +1199,161 @@ RestClient::ResourceNotFound (404 Resource Not Found):
   Rendered /Users/juideshpande/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
   Rendered /Users/juideshpande/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
   Rendered /Users/juideshpande/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-01 14:24:05 +1200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mCategory Load (11.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered home/index.html.erb within layouts/application (196.9ms)
+Completed 200 OK in 294ms (Views: 247.8ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-01 14:24:05 +1200
+Processing by HomeController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered home/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-01 14:24:06 +1200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-09-01 14:24:06 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-01 14:24:06 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-01 14:24:06 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-01 14:24:06 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-01 14:24:06 +1200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-09-01 14:24:06 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-01 14:24:06 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-01 14:24:06 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-01 14:24:06 +1200
+
+
+Started GET "/subcategories?category_id=0153-" for 127.0.0.1 at 2013-09-01 14:24:17 +1200
+Processing by HomeController#subcategories as */*
+  Parameters: {"category_id"=>"0153-"}
+  Rendered subcategories/_subcategory.html.erb (0.6ms)
+  Rendered home/subcategories.js.erb (18.0ms)
+Completed 200 OK in 277ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=&cat=0153-&subCat=Please+choose" for 127.0.0.1 at 2013-09-01 14:24:21 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"", "cat"=>"0153-", "subCat"=>"Please choose"}
+Completed 200 OK in 547ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=&cat=0153-&subCat=0153-0435-" for 127.0.0.1 at 2013-09-01 14:24:31 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"", "cat"=>"0153-", "subCat"=>"0153-0435-"}
+Completed 200 OK in 1679ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=&cat=0153-&subCat=0153-6179-" for 127.0.0.1 at 2013-09-01 14:24:38 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"", "cat"=>"0153-", "subCat"=>"0153-6179-"}
+Completed 200 OK in 1249ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-02 12:44:12 +1200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mCategory Load (11.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered home/index.html.erb within layouts/application (252.3ms)
+Completed 200 OK in 349ms (Views: 302.2ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-02 12:44:13 +1200
+Processing by HomeController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered home/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-02 12:44:13 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-02 12:44:13 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-02 12:44:13 +1200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-09-02 12:44:13 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-02 12:44:14 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-02 12:44:14 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-02 12:44:14 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-02 12:44:14 +1200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-09-02 12:44:14 +1200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-02 12:44:14 +1200
+
+
+Started GET "/subcategories?category_id=5000-" for 127.0.0.1 at 2013-09-02 12:44:37 +1200
+Processing by HomeController#subcategories as */*
+  Parameters: {"category_id"=>"5000-"}
+  Rendered subcategories/_subcategory.html.erb (1.0ms)
+  Rendered home/subcategories.js.erb (35.6ms)
+Completed 200 OK in 591ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?keywords=architect&cat=5000-&subCat=5000-5033-" for 127.0.0.1 at 2013-09-02 12:44:54 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"architect", "cat"=>"5000-", "subCat"=>"5000-5033-"}
+Completed 200 OK in 681ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-02 12:59:08 +1200
+Processing by HomeController#index as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered home/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-02 12:59:08 +1200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-02 12:59:08 +1200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-02 12:59:08 +1200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-09-02 12:59:08 +1200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-02 12:59:08 +1200
+
+
+Started GET "/search?keywords=batman&cat=&subCat=" for 127.0.0.1 at 2013-09-02 12:59:12 +1200
+Processing by HomeController#search as */*
+  Parameters: {"keywords"=>"batman", "cat"=>"", "subCat"=>""}
+Completed 200 OK in 638ms (Views: 0.6ms | ActiveRecord: 0.0ms)
