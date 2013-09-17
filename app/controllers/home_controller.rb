@@ -15,7 +15,8 @@ class HomeController < ApplicationController
 		end
 		#fix keywords
 		url = "https://api.trademe.co.nz/v1/Search/General.json?category=#{choice}&search_string=#{keywords}&rows=501"
-		consumer = ::OAuth::Consumer.new("66B304AB0E8AC0B85C7C395F834649B6F3", "A99259F6D97F60F7BE0BCDDF7E84DEFE90", :site => "https://secure.trademe.co.nz")
+		#consumer = ::OAuth::Consumer.new(" ", " ", :site => "https://secure.trademe.co.nz")
+		 # fill in OAuth keys above with your own keys. 
 		token = ::OAuth::ConsumerToken.new(consumer, '2988879ACAA375E4D9734072AB0DB2D0B5', 'A45830807EC7D9C85AE80487B9E6BF8A7D')
 		request = token.request(:get, url)
 		regionsToCount = {}
