@@ -68,18 +68,27 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$("#categories_category_id").change(function( event ) {
-		$("#subcat").html('');
-		var category_id = $("#categories_category_id").val();
+    //
+
+	$("#categories_category_id").change(function() {
+        var $ = jQuery;
+        var $categories = $("#categories_category_id");
+        var $sub = $("#subcat");
+        if($categories.val() == ''){
+            $sub.hide();
+        } else {
+            $sub.show();
+        }
+		//
+		var category_id = $categories.val();
 		//alert(category_id);
 		$.ajax({
 			url: "/subcategories",
 			data: {
 				category_id: category_id
 			}
-			
+
 		});
-	
 	});
 })
 

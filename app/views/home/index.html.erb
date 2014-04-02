@@ -23,7 +23,6 @@
 <!-- HTML for SEARCH BAR -->
   <div id="tfheader">
     <form align="right" >
-
         <%= collection_select :categories, :category_id, Category.all, :number, :name , prompt: "Categories"%>
           <!-- <select name="Categories" class="optionbox" value="">  
             <option value="" > Categories </option>
@@ -33,7 +32,7 @@
             <option value="" > Categories </option>
             <option value="" > Categories </option>
           </select> -->
-           <select class="optionbox2" id="subcat">  
+           <select class="optionbox2" id="subcat" style="display: none">
             
           </select>      
             <input type="text" id="keywords" class="tftextinput2" name="q" size="21" maxlength="120" placeholder="Search here"><input type="submit" value="Go" class="tfbutton2" id="submitButton">
